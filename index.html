@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Math</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+        #toggleButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Adjust the height as needed */
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            line-height: 20px; /* Match the button height */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="iframeFreezeNova" src="https://sites.google.com/site/tyronesgamesez/home"></iframe>
+    <iframe id="iframeDeltaMath" src="https://www.deltamath.com/"></iframe>
+    <div id="toggleButton">Toggle</div>
+
+    <script>
+        let currentIframeId = "iframeFreezeNova";
+
+        const toggleButton = document.getElementById("toggleButton");
+        toggleButton.addEventListener("click", () => {
+            toggleIframes();
+        });
+
+        function toggleIframes() {
+            const freezeNovaIframe = document.getElementById("iframeFreezeNova");
+            const deltaMathIframe = document.getElementById("iframeDeltaMath");
+
+            if (currentIframeId === "iframeDeltaMath") {
+                currentIframeId = "iframeFreezeNova";
+                freezeNovaIframe.style.display = "block";
+                deltaMathIframe.style.display = "none";
+            } else {
+                currentIframeId = "iframeDeltaMath";
+                freezeNovaIframe.style.display = "none";
+                deltaMathIframe.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
